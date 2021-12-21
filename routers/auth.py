@@ -2,11 +2,11 @@
 from fastapi import APIRouter,Response,  status, HTTPException, Depends
 from fastapi.params import Body
 from sqlalchemy.orm import Session
-from fastApi import schemas
-from fastApi.oauth2 import ACCESS_TOKEN_EXPIRE_MINUTES
+import app.schemas as schemas
+# from ..oauth2 import ACCESS_TOKEN_EXPIRE_MINUTES
 
-from ..database import  get_db
-from .. import models, utils, oauth2
+from app.database import  get_db
+import app.models as models, app.utils as utils, app.oauth2 as oauth2
 
 
 router = APIRouter()

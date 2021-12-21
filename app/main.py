@@ -9,9 +9,10 @@ from fastapi import FastAPI, Depends
 # from fastApi import schemas
 # from fastApi.schemas import Post
 from .database import engine, get_db
-from . import models
-from .routers import user, post, auth
+from routers import post, auth
+import routers.user 
 from fastapi.middleware.cors import CORSMiddleware
+from .models import * 
 
 
 # uvicorn fastApi.main:app --reload
@@ -36,7 +37,7 @@ app.add_middleware(
 )
 
 
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 
 
@@ -47,7 +48,7 @@ async def root():
 
 
 app.include_router(post .router)
-app.include_router(user.router)
+app.include_router(routers.user.router)
 app.include_router(auth.router)
 
 

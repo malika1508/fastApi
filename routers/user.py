@@ -1,13 +1,11 @@
 
 
 from fastapi import APIRouter, Depends
-from fastapi.params import Body
-from pydantic import utils
+# from pydantic import utils
 from sqlalchemy.orm import Session
-from fastApi import schemas
-
-from ..database import  get_db
-from .. import models, utils
+import app.schemas as schemas
+from app.database import  get_db
+import app.models as models, app.utils as utils
 
 router = APIRouter()
 
