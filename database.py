@@ -6,8 +6,9 @@ from . import config
 
 
 settings = config.SettingsConfig()
-SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{settings.DB_PWD}@{settings.DOMAINE}/{settings.DB_NAME}"
+# SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{settings.DB_PWD}@{settings.DOMAINE}/{settings.DB_NAME}"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+SQLALCHEMY_DATABASE_URL = f'{settings.DATABASE_URL}'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
