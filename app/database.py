@@ -6,10 +6,10 @@ from .config import SettingsConfig
 
 
 settings = SettingsConfig()
-# SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{settings.DB_PWD}@{settings.DOMAINE}/{settings.DB_NAME}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.DB_USER}:{settings.DB_PWD}@{settings.DB_HOST}/{settings.DB_NAME}"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
-SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
+# SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
 
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
