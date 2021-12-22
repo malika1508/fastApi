@@ -1,13 +1,6 @@
 
 from fastapi import FastAPI, Depends
 
-# from random import randrange
-# from pydantic.schema import schema
-# from sqlalchemy.orm import Session
-# import psycopg2
-# from sqlalchemy.sql.functions import mode
-# from fastApi import schemas
-# from fastApi.schemas import Post
 from .database import engine, get_db
 from routers import post, auth
 import routers.user 
@@ -15,13 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .models import * 
 
 
-# uvicorn fastApi.main:app --reload
-
-
-
-# conn = psycopg2.connect(host = 'localhost', database = 'fastApi', user = 'postgres', password = 'Bellas 19')
-# cur = conn.cursor()
-
+# uvicorn app.main:app --reload
 
 
 
