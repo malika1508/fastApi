@@ -6,13 +6,14 @@ from .config import SettingsConfig
 
 
 settings = SettingsConfig()
-SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.DB_USER}:{settings.DB_PWD}@{settings.DB_HOST}/{settings.DB_NAME}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.DB_USER}:{settings.DB_PASSWORD}@{settings.DB_HOST}/{settings.DB_NAME}"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
 # SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
 
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
+print("engine created")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

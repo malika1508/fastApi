@@ -6,7 +6,7 @@ class SettingsConfig(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES : int
     DATABASE_URL :str
     DB_USER : str
-    DB_PWD : str 
+    DB_PASSWORD : str 
     DB_NAME : str 
     DB_HOST : str 
     

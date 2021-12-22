@@ -10,9 +10,9 @@ from .config import SettingsConfig
 
 settings = SettingsConfig()
 
-# print(settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-# print(settings.SECRET_KEY)
-# print(settings.ALGORITHM)
+print(settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+print(settings.SECRET_KEY)
+print(settings.ALGORITHM)
 
 SECRET_KEY = settings.SECRET_KEY
 ALGORITHM = settings.ALGORITHM
