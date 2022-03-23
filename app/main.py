@@ -1,16 +1,9 @@
-
-from fastapi import FastAPI, Depends
-
-from .database import engine, get_db
+from fastapi import FastAPI
+from .database import engine
 from routers import post, auth
 import routers.user 
 from fastapi.middleware.cors import CORSMiddleware
 from .models import * 
-
-
-# uvicorn app.main:app --reload
-
-
 
 app = FastAPI()
 
@@ -26,15 +19,12 @@ app.add_middleware(
 
 Base.metadata.create_all(bind=engine)
 
-
-
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
 
 
-
-app.include_router(post .router)
+app.include_router(post.router)
 app.include_router(routers.user.router)
 app.include_router(auth.router)
 
@@ -42,19 +32,19 @@ app.include_router(auth.router)
 
 # @app.get("/posts",  response_model= List[Post])
 # async def get_posts(db: Session = Depends(get_db)):
-#     # cur.execute(""" select * from post """)
-#     # res = cur.fetchall()
-#     # conn.commit()
+#     cur.execute(""" select * from post """)
+#     res = cur.fetchall()
+#     conn.commit()
 #     return res
 
 # @app.get('/posts/{id}', response_model= Post)
 # async def get_post(id : int, db: Session = Depends(get_db)):
-#     # cur.execute("select * from post where id = %s", (str(id),))
-#     # res = cur.fetchone()
-#     # conn.commit()
-#     # if res:
-#     #     return(res)
-#     # raise HTTPException(status_code= status.HTTP_404_NOT_FOUND, detail= "{status.HTTP_404_NOT_FOUND} id not found")
+#     cur.execute("select * from post where id = %s", (str(id),))
+#     res = cur.fetchone()
+#     conn.commit()
+#     if res:
+#         return(res)
+#     raise HTTPException(status_code= status.HTTP_404_NOT_FOUND, detail= "{status.HTTP_404_NOT_FOUND} id not found")
 #     res = db.query(models.Post).filter(models.Post.id == id).first()
 #     return res
 

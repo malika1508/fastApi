@@ -8,7 +8,6 @@ from .config import SettingsConfig
 settings = SettingsConfig()
 SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.DB_USER}:{settings.DB_PASSWORD}@{settings.DB_HOST}/{settings.DB_NAME}"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
-
 # SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
 
 

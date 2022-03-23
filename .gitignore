@@ -1,4 +1,5 @@
 __pycache__
 client.http
 .env
-app/tests.py
+tests.py
+cheat_sheet
